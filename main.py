@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, WebSocket, HTTPException
+from fastapi.middleware.cors import CORSMiddleware  # CORS Fix
 from sqlalchemy import create_engine, Column, String, Integer, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
@@ -7,6 +8,15 @@ from datetime import datetime, timedelta
 from sqlalchemy.exc import IntegrityError
 
 app = FastAPI()
+
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all frontend domains
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all HTTP methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 # Database setup
 DATABASE_URL = "sqlite:///./votes.db"  # SQLite Database
@@ -67,7 +77,7 @@ def detect_fraud(vote: VoteRequest, db: Session):
             return "Fraud detected: Same biometric data used for multiple voters!"
 
         # Detect rapid voting from the same location (within 5 minutes)
-        if v.location == vote.location and abs((vote_time - v.timestamp).total_seconds()) < 300:
+        if v.location == vote.location and abs((vote_time - v.timestamp.replace(tzinfo=None)).total_seconds()) < 300:
             return "Fraud detected: Too many votes from the same location in a short time!"
 
     return None  # No fraud detected
