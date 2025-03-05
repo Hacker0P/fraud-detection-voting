@@ -4,8 +4,8 @@ This project is a full-stack application that detects fraudulent voting activiti
 
 ## Live Demo
 
-- **Frontend (Streamlit UI):** [Live App](https://fraud-detection-voting-uggfllpjyhcm8brxgdpfra.streamlit.app/)  
-- **Backend (FastAPI API):** [API Documentation](https://fraud-detection-voting.onrender.com/docs)  
+- **Frontend (Streamlit UI):** ![Frontend](https://raw.githubusercontent.com/Hacker0P/fraud-detection-voting/main/frontend.jpg)
+- **Backend (FastAPI API):** ![Backend](https://raw.githubusercontent.com/Hacker0P/fraud-detection-voting/main/backend.jpg)
 
 ## Available Scripts
 
