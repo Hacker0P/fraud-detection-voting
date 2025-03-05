@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Fraud Detection in Voting
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a full-stack application that detects fraudulent voting activities using **machine learning** and **biometric verification**. The system consists of a **frontend (Streamlit)** and a **backend (FastAPI)** with a **SQLite database** for secure and efficient fraud detection.
+
+## Live Demo
+
+- **Frontend (Streamlit UI):** [Live App](https://fraud-detection-voting-uggfllpjyhcm8brxgdpfra.streamlit.app/)  
+- **Backend (FastAPI API):** [API Documentation](https://fraud-detection-voting.onrender.com/docs)  
 
 ## Available Scripts
 
-In the project directory, you can run:
-
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the FastAPI backend in development mode.  
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000) to access the API locally.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `streamlit run app.py`
 
-### `npm test`
+Runs the Streamlit frontend in development mode.  
+It opens automatically in your default web browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `pip install -r requirements.txt`
 
-### `npm run build`
+Installs all necessary dependencies for both frontend and backend.  
+Ensure you run this command in both `src/frontend` and `src/backend` directories before starting the project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `uvicorn main:app --reload`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Starts the FastAPI backend server with live reloading.  
+Use this when developing and testing API endpoints.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+- ✅ Secure vote submission with biometric authentication.  
+- ✅ Fraud detection using machine learning models.  
+- ✅ Interactive UI built with Streamlit.  
+- ✅ FastAPI-based backend for handling vote data.  
+- ✅ SQLite database for storing votes.  
+- ✅ CORS support for frontend-backend communication.  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Frontend
+- **Streamlit** (for UI)
+- **Requests** (for API communication)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Backend
+- **FastAPI** (for API development)
+- **SQLite** (for database storage)
+- **SQLAlchemy** (ORM for database interactions)
+- **Pydantic** (for data validation)
+- **CORS Middleware** (for cross-origin access)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## How It Works
 
-## Learn More
+1. **Users enter vote details (Voter ID, Candidate, Location, Biometric Hash, Timestamp)** in the Streamlit frontend.
+2. **Frontend sends the vote data to the FastAPI backend**, which processes and stores it in the SQLite database.
+3. **Fraud detection algorithms analyze voting patterns** and flag suspicious activities.
+4. **Results are displayed in the frontend** for easy visualization.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Frontend (Streamlit UI)
+![Frontend](screenshots/frontend.jpg)
 
-### Code Splitting
+### Backend (FastAPI with Database)
+![Backend](screenshots/backend.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Deployment
 
-### Analyzing the Bundle Size
+The project is deployed using:  
+- **Frontend:** Streamlit Cloud 
+- **Backend:** Render 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Steps to Deploy
 
-### Making a Progressive Web App
+1. **Frontend Deployment:**
+   - Push frontend code to GitHub.
+   - Deploy using Streamlit Sharing.
+   - Update the API URL in the frontend code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. **Backend Deployment:**
+   - Push backend code to GitHub.
+   - Deploy using Render.
+   - Set up the database and API endpoints.
 
-### Advanced Configuration
+## Future Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- 🔹 Real-time fraud detection.  
+- 🔹 Advanced ML models (BERT, RoBERTa, etc.).  
+- 🔹 Blockchain-based secure voting.  
+- 🔹 Cloud-based authentication & storage.  
 
-### Deployment
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contributions are welcome! Feel free to submit issues or pull requests.
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
+
+## Contact
+
+For any inquiries, reach out via [shibamkundu120103@gmail.com] or open an issue in the repository.
