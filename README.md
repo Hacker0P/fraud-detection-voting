@@ -61,10 +61,10 @@ Use this when developing and testing API endpoints.
 ## Screenshots
 
 ### Frontend (Streamlit UI)
-![Frontend](screenshots/frontend.jpg)
+![Frontend](img src="https://raw.githubusercontent.com/Hacker0P/fraud-detection-voting/frontend.jpg" width="100%")
 
 ### Backend (FastAPI with Database)
-![Backend](screenshots/backend.jpg)
+![Backend](img src="https://raw.githubusercontent.com/Hacker0P/fraud-detection-voting/main/backend.jpg" width="100%")
 
 ## Deployment
 
